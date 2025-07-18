@@ -13,7 +13,7 @@ import Profile from './pages/profile/Profile.jsx';
 import Settings from './pages/settings/Settings.jsx';
 import EditProfile from './pages/editprofile/EditProfile.jsx';
 import PasswordGenerator from './pages/generator/Generator.jsx';
-import NoPage from './pages/nopage/Nopage.jsx';
+import NoPage from './pages/nopage/NoPage.jsx';
 
 import './App.css';
 

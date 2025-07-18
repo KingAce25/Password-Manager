@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  /* background: linear-gradient(to top right, #4b0082, #191970, #000); */
+  /* background-size: 400% 400%; */
+  /* animation: bgGradient 12s ease infinite; */
+  color: var(--text);
+}
+
+.edit-profile-btn {
+  margin-top: 1rem;
+  display: inline-block;
+  color: #facc15;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profile-buttons
+{
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-wrapper > sidebar
+{
+  position: fixed;
+}
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #facc15;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.user-info p {
+  color: #ccc;
+}
+
+.profile-wrapper {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid var(--border);
+  transition: background 0.3s, color 0.3s;
+  /* max-width: 800px; */
+  /* margin: 1rem 4rem; */
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-wrapper h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+/* @keyframes bgGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+.profile-container {
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  color: var(--text);
+}
+
+.logout-btn {
+  background-color: rgba(113, 112, 127, 0.1);
+  border: 1px solid rgba(91, 64, 64, 0.2);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.profile-card {
+  background: rgba(154, 152, 152, 0.1);
+  border: 1px solid rgba(91, 64, 64, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.user-details p {
+  margin-bottom: 0.5rem;
+}
+
+.loading-text {
+  color: #ccc;
+}

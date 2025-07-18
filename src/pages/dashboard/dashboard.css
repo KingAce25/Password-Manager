@@ -1,0 +1,461 @@
+/* 🎉 Background party animation */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  /* background-size: 400% 400%; */
+  /* animation: bgParty 15s ease infinite; */
+  color: (var(--text));
+}
+
+/* Responsive wrapper */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 4rem;
+}
+/* 
+.dashboard-container
+{
+  margin: 1rem;
+} */
+
+.theme-toggle-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text);
+  cursor: pointer;
+  margin: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle-icon:hover {
+  transform: rotate(20deg);
+  color: #fbbf24; /* Yellow-ish for fun */
+}
+
+.header
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+@media (min-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: row;
+  }
+}
+
+/* 🍔 Hamburger */
+.hamburger {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--bg);
+  z-index: 1100;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* 📦 Main dashboard content */
+.dashboard-container {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .dashboard-container {
+    margin-left: 260px;
+  }
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ✍️ Form Section */
+.form-section {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px rgba(255,255,255,0.05);
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Success Animation Styles - Centered with Confetti */
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-animation {
+  position: relative;
+  text-align: center;
+  animation: popIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.confetti-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff6b6b;
+  animation: confettiFall linear infinite;
+}
+
+.confetti-0 { background: #ff6b6b; }
+.confetti-1 { background: #4ecdc4; }
+.confetti-2 { background: #45b7d1; }
+.confetti-3 { background: #f9ca24; }
+.confetti-4 { background: #f0932b; }
+.confetti-5 { background: #eb4d4b; }
+
+.success-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.success-icon-large {
+  font-size: 48px;
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s both;
+}
+
+.success-message {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.6s ease-out 0.5s both;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-400px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(400px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(76, 175, 80, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Delete animation variant */
+.success-animation:has(.success-icon-large:contains('🗑️')) .success-circle {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  box-shadow: 0 0 30px rgba(231, 76, 60, 0.5);
+}
+
+.success-animation:has(.success-icon-large:contains('🗑️')) .success-circle {
+  animation: pulseGlowRed 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlowRed {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(231, 76, 60, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(231, 76, 60, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+/* Dark theme support */
+[data-theme="dark"] .success-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="dark"] .success-message {
+  color: #f0f0f0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .success-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .success-icon-large {
+    font-size: 40px;
+  }
+  
+  .success-message {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+  
+  .confetti-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Animation timing for different confetti pieces */
+.confetti:nth-child(odd) {
+  animation-duration: 3s;
+}
+
+.confetti:nth-child(even) {
+  animation-duration: 2.5s;
+}
+
+.confetti:nth-child(3n) {
+  animation-duration: 4s;
+}
+
+/* Different shapes for confetti */
+.confetti:nth-child(2n) {
+  border-radius: 50%;
+}
+
+.confetti:nth-child(3n) {
+  transform: rotate(45deg);
+}
+
+.confetti:nth-child(4n) {
+  width: 6px;
+  height: 20px;
+}
+
+.form input {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.1);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.form input::placeholder {
+  color: #ccc;
+}
+
+.form button {
+  /* background: red; */
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  opacity: 0.9;
+}
+
+/* 🔐 Password Section */
+.password-section {
+  margin-top: 2rem;
+}
+
+.password-section h2 {
+  margin-bottom: 0.5rem;
+}
+
+.toggle-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.top-bar
+{
+  display: flex;
+  border-radius: 25pt;
+  justify-content: space-between;
+  /* gap: 10rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: fit-content; */
+  border-radius: 5pt;
+}
+
+.top-bar > input
+{
+  flex: 8;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 5pt 0pt 0pt 5pt;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 1rem;
+  width: 35rem;
+}
+
+.top-bar > button
+{
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+  width: 7rem;
+  border-radius: 0pt 5pt 5pt 0pt;
+  color: var(--text);
+  flex: 1;
+}
+
+.entries {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .entries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .entries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 🎨 Color Themes for entries */
+.entry {
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.entry h3 {
+  margin-bottom: 0.25rem;
+}
+
+.entry p {
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.entry .delete-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.no-entries {
+  font-style: italic;
+  color: var(--text);
+}

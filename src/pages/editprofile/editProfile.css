@@ -1,0 +1,80 @@
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .dashboard-wrapper {
+      flex-direction: row;
+    }
+  }
+  
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    z-index: 1100;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  
+  .dashboard-container {
+    flex: 1;
+    padding: 2rem 1rem;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+  }
+  
+  /* @media (min-width: 768px) {
+    .dashboard-container {
+      margin-left: 260px;
+    }
+  } */
+  
+  .header-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ccc;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .profile-form-wrapper {
+    max-width: 900px;
+    margin: auto;
+    width: 100%;
+  }
+  

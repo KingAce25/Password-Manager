@@ -1,0 +1,51 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+body.light {
+  --bg: #f7f7f7;
+  --text: #222;
+  --card-bg: #fff;
+  --border: #ddd;
+  --shadow: rgba(0, 0, 0, 0.1);
+  
+
+
+  .all_buttons
+  {
+    color: black;
+    background: whitesmoke;
+  }
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #eee;
+  --card-bg: #1f1f1f;
+  --border: #333;
+  --shadow: rgba(0, 0, 0, 0.4);
+
+  .all_buttons
+  {
+    color: whitesmoke;
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dashboard-container,
+.entry,
+.form {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 12px var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
